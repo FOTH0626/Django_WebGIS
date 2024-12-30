@@ -96,3 +96,6 @@ MVT中没有单独的`Controller`
 # Django 命令
 `python -m django startapp {name}` 用来新建app(module)  
 
+`python -m manage makemigrations` 生成迁移文件
+
+`python -m manage migrate` 迁移数据库

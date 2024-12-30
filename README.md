@@ -11,3 +11,8 @@ IDE:PyCharm Professional
 
 锅（已完成）：
 - 暂无
+
+---
+```bash
+npm install --save @types/leaflet
+```

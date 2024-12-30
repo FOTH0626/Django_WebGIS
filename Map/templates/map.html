@@ -24,6 +24,40 @@
 </head>
 <body>
     <div id="map"></div>
-    <script type = "module" src="{% static 'map.js'%} "></script>
+
+    <div id="label">
+        <table>
+            <tr>
+                <td><a href="#" onclick="toggleDropdown('year1')">加载矢量数据</a></td>
+                <td><select id="year1" style="display:none;">
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="toggleDropdown('year2')">加载遥感影像数据</a></td>
+                <td><select id="year2" style="display:none;">
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="toggleDropdown('year3')">比较不同年份的差异</a></td>
+                <td><select id="year3" style="display:none;">
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                </select></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="{% static 'map.js'%} "></script>
+    <script src = "{% static 'vector.js'%}"></script>
 </body>
 </html>
