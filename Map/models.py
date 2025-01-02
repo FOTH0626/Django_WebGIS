@@ -5,8 +5,6 @@ from import_export import resources
 
 class GeoJSONData(models.Model):
     name = models.CharField(max_length=255)
-    crs_type = models.CharField(max_length=255)
-    crs_properties = models.JSONField()
     features = models.JSONField()
 
     def __str__(self):
@@ -17,6 +15,14 @@ class ShapeFileData(geoModels.Model):
     crs_type = models.CharField(max_length=255)
     crs_properties = models.JSONField()
     features = models.JSONField()
+
+    def __str__(self):
+        return self.name
+
+
+class GeoTIFFData(models.Model):
+    name = models.CharField(max_length=255)
+    data = models.FileField()
 
     def __str__(self):
         return self.name
