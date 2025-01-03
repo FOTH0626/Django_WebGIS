@@ -29,7 +29,9 @@ def geotiff_corners(geotiff_path):
             corners_geo = [transform * corner for corner in corners_pixel]
 
             # 将 GeoTIFF 的 CRS 转换为 WGS84 (EPSG:4326)
-            if crs is not None:
+            if crs == "EPSG:4326":
+                corners_wgs84 = corners_geo
+            elif crs is not None:
                 transformer = Transformer.from_crs(crs, "EPSG:4326", always_xy=True)
                 corners_wgs84 = [transformer.transform(x, y) for x, y in corners_geo]
             else:
