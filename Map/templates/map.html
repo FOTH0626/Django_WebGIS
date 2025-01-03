@@ -5,59 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
-            rel="stylesheet"
-            href="{% static 'map.css' %}"
+        rel="stylesheet"
+        href="{% static 'map.css' %}"
     />
     <link
-            rel="stylesheet"
-            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-            crossorigin=""
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""
     />
     <script
-            src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-            crossorigin="">
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""
+    ></script>
 
-    </script>
     <title>Map</title>
 </head>
 <body>
     <div id="map"></div>
 
-    <div id="label">
-        <table>
-            <tr>
-                <td><a href="#" onclick="toggleDropdown('year1')">加载矢量数据</a></td>
-                <td><select id="year1" style="display:none;">
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                </select></td>
-            </tr>
-            <tr>
-                <td><a href="#" onclick="toggleDropdown('year2')">加载遥感影像数据</a></td>
-                <td><select id="year2" style="display:none;">
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                </select></td>
-            </tr>
-            <tr>
-                <td><a href="#" onclick="toggleDropdown('year3')">比较不同年份的差异</a></td>
-                <td><select id="year3" style="display:none;">
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                </select></td>
-            </tr>
-        </table>
-    </div>
-
-    <script src="{% static 'map.js'%} "></script>
-    <script src = "{% static 'vector.js'%}"></script>
+    <script src="{% static 'map.js' %}"></script>
 </body>
 </html>

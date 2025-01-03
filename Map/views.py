@@ -7,6 +7,7 @@ from django.http import FileResponse
 from .models import GeoJSONData
 from .serializers import GeoJSONDataSerializer
 from .models import GeoTIFFData
+from .models import ImageModel
 
 @api_view(['GET'])
 def get_geojson_by_id(request, pk):
@@ -38,3 +39,22 @@ def get_geotiff_by_id(request, pk):
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+@api_view(['GET'])
+def get_image_coordinates(request, image_id):
+    try:
+        image = ImageModel.objects.get(id=image_id)
+        data = {
+            "southwest": {"lat": float(image.southwest_lat), "lng": float(image.southwest_lng)},
+            "northeast": {"lat": float(image.northeast_lat), "lng": float(image.northeast_lng)},
+        }
+        return Response(data)
+    except ImageModel.DoesNotExist:
+        return Response({"error": "Image not found"}, status=404)
+
+@api_view(['GET'])
+def get_image_file(request, image_id):
+    try:
+        image = ImageModel.objects.get(id=image_id)
+        return FileResponse(image.image.open(), content_type="image/png")
+    except ImageModel.DoesNotExist:
+        return Response({"error": "Image not found"}, status=404)
