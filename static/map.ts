@@ -37,7 +37,7 @@ controlContainer.onAdd = () => {
 controlContainer.addTo(map);
 
 // 加载 GeoJSON
-fetch("./api/geojson/9")
+fetch("./api/geojson/10")
   .then((response) => response.json())
   .then((data) => {
     geoJsonLayer = L.geoJSON(data.features, {
