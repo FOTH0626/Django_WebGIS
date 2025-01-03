@@ -40,7 +40,7 @@ def geotiff_corners(geotiff_path):
             print("四个角的 WGS84 坐标 (左上, 右上, 左下, 右下):")
             for i, (lon, lat) in enumerate(corners_wgs84):
                 if lon is not None and lat is not None:
-                    print(f"  角 {i+1}: 经度 = {lon}, 纬度 = {lat}")
+                    print(f"  角 {i+1}: 经度 = {lon:.9}, 纬度 = {lat:.9}")
                 else:
                     print(f"  角 {i+1}: 坐标转换失败")
     except Exception as e:
