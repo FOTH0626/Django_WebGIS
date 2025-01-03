@@ -175,3 +175,4 @@ cython_debug/
 db.sqlite3
 /node_modules/
 /package-lock.json
+/static/*.js
